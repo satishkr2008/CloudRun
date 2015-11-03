@@ -154,4 +154,11 @@
             android:textSize="20dip" >
         </TextView>
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/My_Container_1_ID"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp">
+    </FrameLayout>
+
 </LinearLayout>

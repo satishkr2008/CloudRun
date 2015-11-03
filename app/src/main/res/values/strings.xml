@@ -5,4 +5,7 @@
     <string name="button_create_track">Create Track</string>
     <string name="button_start_mapping">Start Mapping</string>
     <string name="title_activity_maps">Map View</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

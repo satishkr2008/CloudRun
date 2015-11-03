@@ -1,6 +1,8 @@
 package com.satish.cloudrun;
 
 import android.app.AlertDialog;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.MapFragment;
 import com.satish.cloudrun.R;
 
 public class CreateTrackActivity extends AppCompatActivity implements LocationListener {
@@ -34,6 +37,7 @@ public class CreateTrackActivity extends AppCompatActivity implements LocationLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_track);
+        addMapFragment();
 
         latitudeField = (TextView) findViewById(R.id.TextView02);
         longitudeField = (TextView) findViewById(R.id.TextView04);
@@ -75,6 +79,13 @@ public class CreateTrackActivity extends AppCompatActivity implements LocationLi
         startActivity(intent);
     }
 
+    private void addMapFragment() {
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        GoogleMapFragment googleMapFragment = new GoogleMapFragment();
+        fragmentTransaction.add(R.id.My_Container_1_ID, googleMapFragment);
+        fragmentTransaction.commit();
+    }
     /* Request updates at startup */
     @Override
     protected void onResume() {
