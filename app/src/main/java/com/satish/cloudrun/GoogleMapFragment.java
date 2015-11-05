@@ -55,6 +55,11 @@ public class GoogleMapFragment extends Fragment {
         return v;
     }
 
+    public void addMarker (double lat, double longi) {
+        LatLng coordinate = new LatLng(lat, longi);
+        googleMap.addMarker(new MarkerOptions().position(coordinate));
+    }
+
     @Override
     public void onResume() {
         super.onResume();

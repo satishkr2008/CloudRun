@@ -155,10 +155,11 @@
         </TextView>
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/My_Container_1_ID"
-        android:layout_width="fill_parent"
-        android:layout_height="250dp">
-    </FrameLayout>
+    <fragment android:name="com.satish.cloudrun.GoogleMapFragment"
+        android:id="@+id/gmap"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
+
 
 </LinearLayout>

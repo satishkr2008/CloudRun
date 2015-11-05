@@ -37,7 +37,7 @@ public class CreateTrackActivity extends AppCompatActivity implements LocationLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_track);
-        addMapFragment();
+        //addMapFragment();
 
         latitudeField = (TextView) findViewById(R.id.TextView02);
         longitudeField = (TextView) findViewById(R.id.TextView04);
@@ -79,13 +79,14 @@ public class CreateTrackActivity extends AppCompatActivity implements LocationLi
         startActivity(intent);
     }
 
+    /*
     private void addMapFragment() {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        GoogleMapFragment googleMapFragment = new GoogleMapFragment();
+        googleMapFragment = new GoogleMapFragment();
         fragmentTransaction.add(R.id.My_Container_1_ID, googleMapFragment);
         fragmentTransaction.commit();
-    }
+    }*/
     /* Request updates at startup */
     @Override
     protected void onResume() {
@@ -123,6 +124,10 @@ public class CreateTrackActivity extends AppCompatActivity implements LocationLi
         altitudeField.setText(String.valueOf(alt));
         speedField.setText(String.valueOf(speed));
         timeField.setText(String.valueOf(time));
+
+        GoogleMapFragment googleMapFragment = (GoogleMapFragment)
+                getFragmentManager().findFragmentById(R.id.gmap);
+        googleMapFragment.addMarker(lat, lng);
     }
 
     @Override
